@@ -3,7 +3,7 @@ title: Slatestartcodex articles by popularity
 description: > # this means to ignore newlines until "baseurl:"
         Slate start codex is difficult to navigate without knowing which
         articles are best-rated
-baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: /slatestarcodexfbsharecount
 url: "http://afiodorov.github.io/slatestarcodexfbsharecount/"
 github_username:  afiodorov
 
