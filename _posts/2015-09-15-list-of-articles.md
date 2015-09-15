@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  List of slatestarcodex articles sorted by number of Facebook shares
+title:  List of slatestarcodex articles sorted by the number of Facebook shares
 date:   2015-09-15 12:37:39
 categories: list
 ---
