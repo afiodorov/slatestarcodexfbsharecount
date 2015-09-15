@@ -1,7 +1,5 @@
 var Promise = require('promise');
-
 var links = require('./links');
-
 var phantom = require('phantom');
 
 var options = {
@@ -29,19 +27,15 @@ var createCountPromise = function(link) {
   });
 };
 
-var promisedCounts = [];
-
-function afterIth(i, ithResult) {
+function onIthShareCount(i, ithResult) {
   console.log(links.links[i] + ',' + ithResult);
   if (i + 1 < links.links.length) {
-      promisedCounts[i + 1] = createCountPromise(links.links[i + 1]);
-      promisedCounts[i + 1].then(function(count) {
-      afterIth(i + 1, count).call();
+      createCountPromise(links.links[i + 1]).then(function(count) {
+      onIthShareCount(i + 1, count).call();
     });
   }
 }
 
-promisedCounts[0] = createCountPromise(links.links[0]);
-promisedCounts[0].then(function(count) {
-  afterIth(0, count).call();
+createCountPromise(links.links[0]).then(function(count) {
+  onIthShareCount(0, count).call();
 });
